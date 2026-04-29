@@ -1,12 +1,13 @@
 import Link from "next/link";
 
-export const dynamic = "force-dynamic"; // prove dynamic SSR works through the rewrite
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "info · hello · sypher",
   robots: { index: false },
 };
 
+// Renders at sypher.in/hello/info via the shell rewrite + basePath.
 export default function HelloInfo() {
   const buildTime = new Date().toISOString();
 
@@ -14,12 +15,12 @@ export default function HelloInfo() {
     <main className="min-h-screen bg-[#0c0a09] text-[#f5f0e6] flex flex-col">
       <header className="border-b border-[rgba(245,240,230,0.1)] px-6 py-4 md:px-10">
         <div className="mx-auto flex max-w-[900px] items-center justify-between">
-          <Link href="/hello" className="font-mono text-sm">
+          <Link href="/" className="font-mono text-sm">
             <span className="inline-block size-2 rounded-full bg-[#ffe600] mr-2 align-middle" />
             sypher<span className="text-[#8a847b]">/hello</span>
           </Link>
           <nav className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8a847b]">
-            <Link href="/hello" className="hover:text-[#f5f0e6] transition-colors">
+            <Link href="/" className="hover:text-[#f5f0e6] transition-colors">
               ← /hello
             </Link>
           </nav>
@@ -59,7 +60,7 @@ export default function HelloInfo() {
 
           <div className="mt-12 flex gap-3">
             <Link
-              href="/hello"
+              href="/"
               className="rounded border border-[rgba(245,240,230,0.1)] px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#8a847b] transition-colors hover:border-[#f5f0e6] hover:text-[#f5f0e6]"
             >
               ← back
@@ -76,7 +77,7 @@ export default function HelloInfo() {
 
       <footer className="border-t border-[rgba(245,240,230,0.1)] px-6 py-6 md:px-10">
         <div className="mx-auto max-w-[900px] font-mono text-[10px] uppercase tracking-[0.18em] text-[#4a4641]">
-          sypher-tool-hello · demo tool · v0.0.1
+          sypher-tool-hello · demo tool · v0.0.2 · basePath edition
         </div>
       </footer>
     </main>
